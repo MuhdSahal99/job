@@ -9,7 +9,7 @@ def show():
 
     if uploaded_file is not None:
         # Initialize JobMatcher
-        job_matcher = JobMatcher("data\job_listings.py")
+        job_matcher = JobMatcher("data/job_listings.csv")
 
         # Process the resume and get recommendations
         recommendations = job_matcher.process_resume(uploaded_file)
