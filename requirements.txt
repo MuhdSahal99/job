@@ -5,3 +5,4 @@ scikit-learn
 google-generativeai
 python-docx
 PyPDF2
+nltk
