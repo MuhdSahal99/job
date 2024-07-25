@@ -1,5 +1,9 @@
 import streamlit as st
 from pages import candidate_page, employer_page
+import nltk
+
+nltk.download('punkt', quiet=True)
+nltk.download('stopwords', quiet=True)
 
 def main():
     st.sidebar.title("Job Matcher")
