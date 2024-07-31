@@ -32,7 +32,21 @@ class JobMatcher:
             similarity = similarities[idx]
 
             # Use Gemini to generate a personalized job description
-            prompt = f"Based on the following job description, provide a concise and personalized summary for a potential candidate:\n\n{job_description}"
+            prompt =f"""
+                Given the following job description and a candidate's resume:
+        
+                Job Description:
+                {job_description}
+        
+                Candidate's Resume:
+                {resume_text}
+        
+                Please provide:
+                1. A list of matching skills between the resume and the job description
+                2. Any additional skills or qualifications the candidate might need for this role
+                3. Suggestions for how the candidate can improve their resume for this specific job
+                4. Any relevant certifications or training that could enhance the candidate's profile for this position
+                """
             response = self.gemini.generate_content(prompt)
             personalized_description = response.text
 
